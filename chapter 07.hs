@@ -67,6 +67,10 @@ altMap :: (a -> b) -> (a -> b) -> [a] -> [b]
 altMap _ _ [] = []
 altMap f g (x:y:xs) = (f x) : (g y) : altMap f g xs
 
+
+
+
+
 {- Exercise 10 -}
 luhnDouble :: Int -> Int
 luhnDouble x = if 2*x < 10 then 2*x else 2*x - 9
