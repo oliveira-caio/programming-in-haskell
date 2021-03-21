@@ -1,4 +1,4 @@
-{- Exercicio 1 -}
+{- Exercise 1 -}
 data Nat = Zero | Succ Nat
          deriving (Show, Read)
 
@@ -11,7 +11,11 @@ mult Zero n = Zero
 mult (Succ Zero) n = n
 mult (Succ m) n = add (mult m n) n
 
-{- Exercicio 2 -}
+
+
+
+
+{- Exercise 2 -}
 data Tree a = Leaf a | Node (Tree a) a (Tree a)
 
 occurs :: Ord a => a -> Tree a -> Bool
@@ -24,7 +28,11 @@ t :: Tree Int
 t = Node (Node (Leaf 1) 3 (Leaf 4)) 5
     (Node (Leaf 6) 7 (Leaf 9))
 
-{- Exercicio 3 -}
+
+
+
+
+{- Exercise 3 -}
 data Tree2 a = Leaf2 a | Node2 (Tree2 a) (Tree2 a)
              deriving (Show, Read)             
 
@@ -43,7 +51,11 @@ balanced (Leaf2 x) = True
 balanced (Node2 l r) = balanced l && balanced r
                      && abs (leaves l - leaves r) <= 1
 
-{- Exercicio 4 -}
+
+
+
+
+{- Exercise 4 -}
 halve :: [a] -> [[a]]
 halve [] = []
 halve xs = [take (length xs `div` 2) xs] ++ [drop (length xs `div` 2) xs]
