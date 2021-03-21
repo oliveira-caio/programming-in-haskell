@@ -4,6 +4,10 @@ import System.IO
 putStr' :: String -> IO ()
 putStr' xs = sequence_ [putChar x | x <- xs]
 
+
+
+
+
 {- Exercise 2 -}
 type Board = [Int]
 
@@ -26,6 +30,10 @@ putBoard2 r (n:ns) = do putRow r n
 putBoard3 :: Board -> IO ()
 putBoard3 xs = sequence_ [putRow r x | (r,x) <- zip [1..] xs]
 
+
+
+
+
 {- Exercise 5 -}
 adder :: IO ()
 adder = do putStr "How many?"
@@ -34,24 +42,3 @@ adder = do putStr "How many?"
            addList <- sequence [getChar | _ <- [1..k]]
            addList2 <- [show "x" | x <- addList]
            putStr $ "The total is " ++ show (sum addList2) ++ "\n"
-
-
-{- Exercise 6 -}
-getCh :: IO Char
-getCh = do hSetEcho stdin False
-           x <- getChar
-           hSetEcho stdin True
-           return x
-
-{-readLine :: IO String
-readLine = readLine' ""
-
-readLine' :: [Char] -> IO [Char]
-readLine' xs = do x <- getCh
-                  case x of '\n' -> return xs
-                            '\DEL' -> if null xs
-                                          then readLine' ""
-                                          else do putStr "\b \b"
-                                                  readLine' (init xs)
-                            _ -> do putChar x
-                                    readLine' (xs ++ [x])-}
