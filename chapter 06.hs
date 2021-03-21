@@ -1,21 +1,21 @@
-{- Exercicio 2 -}
+{- Exercise 2 -}
 sumdown :: Int -> Int
 sumdown 0 = 0
 sumdown n = n + sumdown (n-1)
 
-{- Exercicio 3 -}
+{- Exercise 3 -}
 expon :: Int -> Int -> Int
 expon _ 0 = 1
 expon n m = n * expon n (m-1)
 
 
-{- Exercicio 4 -}
+{- Exercise 4 -}
 euclid :: Int -> Int -> Int
 euclid n m | n == m = n
            | n < m = euclid n (m-n)
            | otherwise = euclid m (n-m)
 
-{- Exercicio 6 -}
+{- Exercise 6 -}
 and' :: [Bool] -> Bool
 and' [] = True
 and' (x:xs) = x && and' xs
@@ -33,14 +33,14 @@ elem' t x | null x      = False
           | t == head x = True
           | otherwise   = elem' t (tail x)
 
-{- Exercicio 7 -}
+{- Exercise 7 -}
 merge' :: Ord a => [a] -> [a] -> [a]
 merge' [] ys = ys
 merge' xs [] = xs
 merge' (x:xs) (y:ys) | x <= y = [x] ++ merge' xs (y:ys)
                      | otherwise = [y] ++ merge' (x:xs) ys
 
-{- Exercicio 8 -}
+{- Exercise 8 -}
 halve :: [a] -> ([a],[a])
 halve xs = (take (length xs `div` 2) xs, drop (length xs `div` 2) xs)
 
@@ -49,7 +49,7 @@ msort [] = []
 msort [x] = [x]
 msort xs = merge' (msort (fst (halve xs))) (msort (snd (halve xs)))
 
-{- Exercicio 9 -}
+{- Exercise 9 -}
 
 sum' :: Num a => [a] -> a
 sum' [] = 0
